@@ -7,14 +7,14 @@ This project is designed to learn and implement **Docker** and **Keycloak** by d
 ## 🚀 Phase 1: Initial Microservice Architecture  
 
 ### 1️⃣ API Gateway  
-- Acts as the **entry point** for all clients.  
-- Implements **JWT authentication** for securing endpoints..  
+- Acts as the **entry point** for all clients.   
 
 ### 2️⃣ Product Setup Service (Handles Insert, Update, Delete, and Retrieve Product Operations)  
 - Built using **Spring Boot** and **Spring Data JPA**.  
 - Implements **Spring Validation** for request validation.  
 - Integrated with **Swagger** for API documentation.  
-- Supports **pagination** for efficient data retrieval.  
+- Supports **pagination** for efficient data retrieval.
+- Spring Profiling  
 - Includes **unit tests** to ensure reliability.  
 - **Logging** is added for better monitoring and debugging.  
 - Uses **GlobalExceptionHandler** to handle application-wide exceptions.  
@@ -47,7 +47,7 @@ This project is designed to learn and implement **Docker** and **Keycloak** by d
 
 ## 📌 Phase 2: Enhancements and Additional Features  
 
-- ✅ **Replace JWT with Keycloak** – Migrate authentication from **JWT-based security** to **Keycloak-based identity management**.  
+- ✅ **JWT with Keycloak**.  
 - ✅ **Improved Product Details Handling** – Use **basic JPA annotations** for enhanced data modeling.  
 - ✅ **Detailed Product Search Results** – Introduce more detailed response structures.  
 - ✅ **Redis Caching** – Implement **Redis cache** for better performance and reduced database queries.  
