@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: mydatabase
+      MYSQL_TCP_PORT: 3306
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - mynetwork
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["/app/entrypoint.sh"]
+    ports:
+      - "8761:8761"  # Eureka Server
+      - "8082:8082"  # product-search
+      - "8081:8081"  # product-setup
+    networks:
+      - mynetwork
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydatabase?allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: pass
+    depends_on:
+      - mysql
+
+networks:
+  mynetwork:
+    driver: bridge

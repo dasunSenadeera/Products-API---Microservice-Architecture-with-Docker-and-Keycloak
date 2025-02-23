@@ -1,0 +1,54 @@
+#server:
+#  port=8081
+#spring:
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#  datasource:
+#    url: jdbc:h2:mem:dcbapp
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: password
+#    jpa:
+#      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+
+pagination:
+  default-page: 0
+  default-size: 10
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+
+logging:
+  level:
+    org.springframework.amqp: DEBUG
+    com.rabbitmq.client: DEBUG
+
+# Keycloak and Eureka configurations remain unchanged
+
+spring:
+  spring:
+    rabbitmq:
+      host: localhost
+      port: 15672
+      username: guest
+      password: guest
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:dcbapp
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    jpa:
+      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect

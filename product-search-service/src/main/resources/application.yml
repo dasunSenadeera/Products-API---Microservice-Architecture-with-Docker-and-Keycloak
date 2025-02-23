@@ -1,0 +1,44 @@
+server:
+  port: 8082
+
+application:
+  base-url: http://PRODUCT-SETUP-SERVICE
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+pagination:
+  default-page: 0
+  default-size: 10
+
+logging:
+  level:
+    org.springframework.amqp: DEBUG
+    com.rabbitmq.client: DEBUG
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+spring:
+  spring:
+    rabbitmq:
+      host: localhost
+      port: 15672
+      username: guest
+      password: guest
+  application:
+    name: product-search-service
+#  h2:
+#    console.enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:dcbapp
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: password
+#    jpa:
+#      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
